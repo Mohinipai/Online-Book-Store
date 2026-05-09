@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Checkout — Inkwell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav glass">
+    <div class="nav-inner container">
+      <a href="index.html" class="logo"><span class="logo-mark">📖</span><span class="logo-text">Inkwell</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="index.html#categories">Categories</a>
+        <a href="index.html#trending">Trending</a><a href="index.html#featured">Featured</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle">🌙</button>
+        <a href="auth.html" id="authLink" class="icon-btn">👤</a>
+        <a href="cart.html" class="icon-btn cart-btn">🛒<span class="cart-count" id="cartCount">0</span></a>
+      </div>
+      <button class="icon-btn menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </header>
+  <div class="container page-head"><h1>Checkout</h1><p class="muted">Almost there — confirm your details below.</p></div>
+  <main class="container">
+    <form class="checkout-layout" onsubmit="placeOrder(event)">
+      <div>
+        <div class="form-card fade-up">
+          <h3>Delivery Address</h3>
+          <div class="form-row cols-2">
+            <div class="field"><label>First name</label><input required placeholder="Jane"/></div>
+            <div class="field"><label>Last name</label><input required placeholder="Doe"/></div>
+          </div>
+          <div class="form-row" style="margin-top:16px">
+            <div class="field"><label>Street address</label><input required placeholder="123 Library Lane"/></div>
+          </div>
+          <div class="form-row cols-2" style="margin-top:16px">
+            <div class="field"><label>City</label><input required placeholder="New York"/></div>
+            <div class="field"><label>ZIP / Postal</label><input required placeholder="10001"/></div>
+          </div>
+          <div class="form-row cols-2" style="margin-top:16px">
+            <div class="field"><label>Country</label><input required placeholder="USA"/></div>
+            <div class="field"><label>Phone</label><input required type="tel" placeholder="+1 555 123 4567"/></div>
+          </div>
+        </div>
+        <div class="form-card fade-up">
+          <h3>Payment Method</h3>
+          <div class="pay-options">
+            <div class="pay-card active"><div class="icon">💳</div><div class="label">Credit Card</div></div>
+            <div class="pay-card"><div class="icon">🅿️</div><div class="label">PayPal</div></div>
+            <div class="pay-card"><div class="icon">🍎</div><div class="label">Apple Pay</div></div>
+          </div>
+          <div class="form-row" style="margin-top:20px">
+            <div class="field"><label>Card number</label><input required placeholder="4242 4242 4242 4242"/></div>
+          </div>
+          <div class="form-row cols-2" style="margin-top:16px">
+            <div class="field"><label>Expiry</label><input required placeholder="MM/YY"/></div>
+            <div class="field"><label>CVC</label><input required placeholder="123"/></div>
+          </div>
+        </div>
+      </div>
+      <aside class="summary fade-up">
+        <h3>Order Summary</h3>
+        <div id="checkoutSummary"></div>
+        <button type="submit" class="btn-primary checkout-btn">Place Order</button>
+      </aside>
+    </form>
+  </main>
+  <footer class="footer"><div class="container copyright">© 2026 Inkwell Books.</div></footer>
+
+  <div class="modal-backdrop" id="successModal">
+    <div class="modal">
+      <div class="checkmark">✓</div>
+      <h2>Order Placed!</h2>
+      <p>Your books are on their way. A confirmation has been sent to your email.</p>
+      <button class="btn-primary" onclick="closeSuccess()">Continue Shopping</button>
+    </div>
+  </div>
+
+  <button id="scrollTop" class="scroll-top icon-btn">↑</button>
+  <div id="toast" class="toast"></div>
+  <script src="data.js"></script><script src="app.js"></script>
+  <script>renderCheckout();</script>
+</body></html>

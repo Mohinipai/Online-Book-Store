@@ -1,0 +1,29 @@
+# General
+.DS_Store
+.vscode/
+.idea/
+
+# Backend
+bookstore-backend/target/
+bookstore-backend/*.class
+bookstore-backend/*.jar
+bookstore-backend/bin/
+bookstore-backend/build/
+bookstore-backend/.settings/
+bookstore-backend/.project
+bookstore-backend/.classpath
+bookstore-backend/.factorypath
+bookstore-backend/uploads/*
+!bookstore-backend/uploads/.gitkeep
+
+# Frontend
+crimson-pages-main/node_modules/
+crimson-pages-main/dist/
+crimson-pages-main/dist-ssr/
+crimson-pages-main/.output/
+crimson-pages-main/.vinxi/
+crimson-pages-main/.tanstack/
+crimson-pages-main/.nitro/
+crimson-pages-main/.wrangler/
+crimson-pages-main/*.local
+crimson-pages-main/.dev.vars

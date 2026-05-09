@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign In — Inkwell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav glass">
+    <div class="nav-inner container">
+      <a href="index.html" class="logo"><span class="logo-mark">📖</span><span class="logo-text">Inkwell</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="index.html#categories">Categories</a>
+        <a href="index.html#trending">Trending</a><a href="index.html#featured">Featured</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle">🌙</button>
+        <a href="cart.html" class="icon-btn cart-btn">🛒<span class="cart-count" id="cartCount">0</span></a>
+      </div>
+      <button class="icon-btn menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <main class="auth-wrap">
+    <div class="auth-card fade-up">
+      <div class="auth-tabs">
+        <button data-mode="login" class="active" onclick="switchAuth('login')">Sign In</button>
+        <button data-mode="signup" onclick="switchAuth('signup')">Sign Up</button>
+      </div>
+
+      <form id="loginForm" onsubmit="submitAuth(event, 'login')">
+        <h2>Welcome back</h2>
+        <p class="muted">Sign in to continue your reading journey.</p>
+        <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@example.com"/></div>
+        <div class="field"><label>Password</label><input type="password" name="password" required minlength="6" placeholder="••••••••"/></div>
+        <button class="btn-primary" type="submit">Sign In</button>
+        <p class="auth-foot">Forgot password? <a href="#" style="color:var(--primary)">Reset</a></p>
+      </form>
+
+      <form id="signupForm" onsubmit="submitAuth(event, 'signup')" style="display:none">
+        <h2>Create account</h2>
+        <p class="muted">Start your story with Inkwell today.</p>
+        <div class="field"><label>Full name</label><input name="name" required placeholder="Jane Doe"/></div>
+        <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@example.com"/></div>
+        <div class="field"><label>Password</label><input type="password" name="password" required minlength="6" placeholder="At least 6 characters"/></div>
+        <button class="btn-primary" type="submit">Create Account</button>
+        <p class="auth-foot">By signing up you agree to our <a href="#" style="color:var(--primary)">Terms</a>.</p>
+      </form>
+    </div>
+  </main>
+
+  <button id="scrollTop" class="scroll-top icon-btn">↑</button>
+  <div id="toast" class="toast"></div>
+  <script src="data.js"></script><script src="app.js"></script>
+  <script>updateCartCount(); initTheme(); initScrollTop(); initMenu();</script>
+</body></html>

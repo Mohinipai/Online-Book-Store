@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Your Cart — Inkwell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav glass">
+    <div class="nav-inner container">
+      <a href="index.html" class="logo"><span class="logo-mark">📖</span><span class="logo-text">Inkwell</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="index.html#categories">Categories</a>
+        <a href="index.html#trending">Trending</a><a href="index.html#featured">Featured</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle">🌙</button>
+        <a href="auth.html" id="authLink" class="icon-btn">👤</a>
+        <a href="cart.html" class="icon-btn cart-btn">🛒<span class="cart-count" id="cartCount">0</span></a>
+      </div>
+      <button class="icon-btn menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </header>
+  <div class="container page-head"><h1>Shopping Cart</h1></div>
+  <main class="container" id="cartRoot"></main>
+  <footer class="footer"><div class="container copyright">© 2026 Inkwell Books.</div></footer>
+  <button id="scrollTop" class="scroll-top icon-btn">↑</button>
+  <div id="toast" class="toast"></div>
+  <script src="data.js"></script><script src="app.js"></script>
+  <script>renderCart();</script>
+</body></html>
